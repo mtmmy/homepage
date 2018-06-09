@@ -1,0 +1,104 @@
+.tab-content {
+    text-align: left;
+}
+
+#uncontrolled-tab-example {
+    .nav-tabs {
+        background-color: rgba(214, 224, 226, 0.2);        
+        padding: 0 5% 0 5%;
+        font-size: 18px;
+        font-weight: 400;
+        li {
+            width: 33.3%;
+            margin: 0;
+            a {
+                background-color: rgba(214, 224, 226, 0.2);
+                color: rgb(51, 51, 51);
+                border: 0;
+            }
+
+            a:hover {
+                background-color: rgba(255, 255, 255, 1);
+            }
+        }
+
+        li.active {
+            a {
+                color: white;
+                background-color: rgb(66, 139, 202);
+            }            
+        }
+    }
+
+    .workingNavDot, .educationNavDot {
+        right: 15px;
+        width: 16px;
+        top: 40%;        
+        position: fixed;
+
+        @media screen and (min-width: 768px) {
+            width: 20px;
+            right: 30px;
+        }
+
+        div {
+            width: 16px;
+            height: 16px;
+            border: 2px black solid;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 8px;
+
+            @media screen and (min-width: 768px) {
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        a.active div {
+            background-color: black;
+        }
+    }
+
+    .expInfoDiv, .eduInfoDiv {
+        // height: 800px;
+        background: url("./../media/backgroundPic.jpg");
+        background-size: cover;
+        padding: 50px 10px 100px 10px;
+        font-size: 18px;
+
+        @media screen and (min-width: 768px) {
+            padding-right: 65px;
+            padding-left: 65px;
+        }
+
+        @media screen and (min-width: 1280px) {
+            padding-right: 25%;
+            padding-left: 25%;
+        }
+
+        .companyName, .school {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .date {
+        }
+
+        .location {
+        }
+
+        .title {
+
+        }
+
+        .detail {
+            margin-top: 15px;
+            font-size: 14px;
+            div {
+                margin-bottom: 6px;
+            }
+        }
+    }
+}
