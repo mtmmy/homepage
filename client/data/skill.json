@@ -1,0 +1,85 @@
+{
+    "frontend": {
+        "nameTxt": "Frontend",
+        "skills": 
+        [
+            {
+                "name": "Javascript",
+                "picClassName": "javascript",
+                "percentage": 90,
+                "isActive": false,
+                "colorCode": "#EEE45F"
+            },
+            {
+                "name": "HTML",
+                "picClassName": "htmlPic",
+                "percentage": 90,
+                "isActive": false,
+                "colorCode": "#e34f26"
+            },
+            {
+                "name": "CSS",
+                "picClassName": "css",
+                "percentage": 90,
+                "isActive": false,
+                "colorCode": "#3784C8"
+            },
+            {
+                "name": "jQuery",
+                "picClassName": "jquery",
+                "percentage": 90,
+                "isActive": false,
+                "colorCode": "#1F3551"
+            },
+            {
+                "name": "ReactJs",
+                "picClassName": "reactjs",
+                "percentage": 70,
+                "isActive": false,
+                "colorCode": "#80D8F7"
+            }
+        ]
+    },
+    "backend": {
+        "nameTxt": "Backend",
+        "skills" : 
+        [
+            {
+                "name": "Java",
+                "percentage": 85,
+                "isActive": false,
+                "colorCode": "#e34f26"
+            },
+            {
+                "name": "Spring Framework",
+                "percentage": 75,
+                "isActive": false,
+                "colorCode": "#e34f26"
+            },
+            {
+                "name": "Spring boost",
+                "percentage": 70,
+                "isActive": false,
+                "colorCode": "#e34f26"
+            }
+        ]
+    },
+    "versionControl": {
+        "nameTxt": "Version Control",
+        "skills": 
+        [
+            {
+                "name": "Git",
+                "percentage": 90,
+                "isActive": false,
+                "colorCode": "#e34f26"
+            },
+            {
+                "name": "SVN",
+                "percentage": 90,
+                "isActive": false,
+                "colorCode": "#e34f26"
+            }
+        ]
+    }
+}

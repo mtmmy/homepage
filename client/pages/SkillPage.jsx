@@ -1,44 +1,86 @@
 import React from 'react';
-import Circle from 'react-circle';
+import { Grid, Row, Col } from 'react-bootstrap';
+import ScrollTrigger from 'react-scroll-trigger';
+import CircleWithName from '../components/CircleWithName.jsx';
+import SkillCircle from './../components/SkillCircle.jsx';
+import './SkillPage.scss'
+// import './example.scss'
+import data from './../data/skill.json';
 
 class SkillPage extends React.Component {
 
     constructor(props) {
         super(props);
+        this.onEnterViewport = this.onEnterViewport.bind(this);
+
         this.state = {
-            percentage: 0,
-        };
-        this.handleClick = this.handleClick.bind(this);
+            skillData: data
+        }
     }
 
-    handleClick(e) {
-        this.setState({percentage: this.state.percentage + 10});
+    componentWillMount() {
+        
+    }
+
+    onEnterViewport(e, rowName) {
+        let newSkillData = this.state.skillData;
+        newSkillData[rowName] = data[rowName];
+        newSkillData[rowName].skills.forEach(function(val, i) {
+            val.isActive = true;
+        });
+        this.setState({ skillData: newSkillData });
+    }
+
+    createAreaRows() {
+        let container = [];
+        let skillData = this.state.skillData;
+
+        let i = 0;
+        for (let key in skillData) {
+            let dataSource = skillData[key];
+            let row = (
+                <Row key={i} className="areaRow">
+                    <Col xs={4} sm={3} md={2} lg={2}>
+                        {dataSource.nameTxt}
+                    </Col>
+                    <Col xs={8} sm={9} md={10} lg={10}>
+                        <ScrollTrigger 
+                            onEnter={ (e) => { this.onEnterViewport(e, key) }} 
+                        >
+                            <Row>{this.createSkills(dataSource.skills)}</Row>
+                        </ScrollTrigger>
+                    </Col>
+                </Row>
+            );
+            container.push(row);
+            i++;
+        }
+
+        return container;
+    }
+
+    createSkills(skills) {
+        let container = [];
+        skills.forEach(function(val, i) {
+            container.push(
+                <Col key={i} xs={6} sm={4} md={3} lg={2}>
+                    <SkillCircle 
+                        percentage={val.percentage} 
+                        colorCode={val.colorCode}
+                        isActive={val.isActive}
+                        picClassName={val.picClassName}
+                        text={val.name}
+                    />
+                </Col>)
+        })
+        return container;
     }
 
     render() {
-        return (
-            <div
-                onClick={(e) => {this.handleClick(e)}}
-            >
-                <Circle
-                    animate={true} // Boolean: Animated/Static progress
-                    animationDuration="1s" //String: Length of animation
-                    responsive={true} // Boolean: Make SVG adapt to parent size
-                    size={150} // Number: Defines the size of the circle.
-                    lineWidth={14} // Number: Defines the thickness of the circle's stroke.
-                    progress={this.state.percentage} // Number: Update to change the progress and percentage.
-                    progressColor="cornflowerblue"  // String: Color of "progress" portion of circle.
-                    bgColor="whitesmoke" // String: Color of "empty" portion of circle.
-                    textColor="hotpink" // String: Color of percentage text color.
-                    textStyle={{
-                        font: 'bold 5rem Helvetica, Arial, sans-serif' // CSSProperties: Custom styling for percentage.
-                    }}
-                    percentSpacing={10} // Number: Adjust spacing of "%" symbol and number.
-                    roundedStroke={true} // Boolean: Rounded/Flat line ends
-                    showPercentage={true} // Boolean: Show/hide percentage.
-                    showPercentageSymbol={true} // Boolean: Show/hide only the "%" symbol.                    
-                />
-            </div>
+        return (                
+            <Grid>
+                {this.createAreaRows()}
+            </Grid>
         );
     }
 }

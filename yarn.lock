@@ -1626,6 +1626,10 @@ clean-css@4.1.x:
   dependencies:
     source-map "0.5.x"
 
+clean-react-props@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/clean-react-props/-/clean-react-props-0.2.4.tgz#06b6b199c5d65918c6319f1c9068c61cf15eece6"
+
 cli-cursor@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/cli-cursor/-/cli-cursor-1.0.2.tgz#64da3f7d56a54412e59794bd62dc35295e8f2987"
@@ -6631,6 +6635,14 @@ react-router@^4.3.1:
     path-to-regexp "^1.7.0"
     prop-types "^15.6.1"
     warning "^4.0.1"
+
+react-scroll-trigger@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/react-scroll-trigger/-/react-scroll-trigger-0.3.3.tgz#48d84d4eadfada60d2b110eccd0fc2b0dc4dbf7f"
+  dependencies:
+    clean-react-props "^0.2.4"
+    lodash.throttle "^4.1.1"
+    prop-types "^15.6.1"
 
 react-scroll@^1.7.9:
   version "1.7.9"

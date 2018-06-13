@@ -1,0 +1,95 @@
+$total-stoke-dasharray: 502;
+$show: show;
+$circle: circle;
+
+.skillPic, .skillName {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-size: 40%;
+    background-repeat:no-repeat;
+    background-position: center center;
+    
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+  }
+
+.outer {
+    fill: transparent;
+    // stroke: #e34f26;
+    stroke-width: 20;
+    stroke-dasharray: $total-stoke-dasharray;
+    stroke-dashoffset: $total-stoke-dasharray;
+    transition: stroke-dashoffset 1s;
+    -webkit-animation-play-state: running;
+    animation-play-state: running;
+    
+    /* firefox bug fix - won't rotate at 90deg angles */
+    -moz-transform: rotate(-89deg) translateX(-190px);
+    transform: rotate(-89deg) translateX(-190px);
+}
+
+.under {
+    fill: transparent;
+    stroke: #f0f0f0;
+    stroke-width: 20;
+    -moz-transform: rotate(-89deg) translateX(-190px);
+    transform: rotate(-89deg) translateX(-190px);
+}
+
+@for $i from 0 through 100 {
+    
+    .#{$circle + $i} {
+        stroke-dashoffset: (100 - $i) * $total-stoke-dasharray / 100;
+        -webkit-animation: $show + $i 2s;
+        animation: $show + $i 2s;
+    }
+
+    @-webkit-keyframes #{$show + $i} {
+        from {
+            stroke-dashoffset: $total-stoke-dasharray;
+        }
+        
+        to {
+            stroke-dashoffset: (100 - $i) * $total-stoke-dasharray / 100;
+        }
+    }
+    
+    @keyframes #{$show + $i} {
+        from {
+            stroke-dashoffset: $total-stoke-dasharray;
+        }
+        
+        to {
+            stroke-dashoffset: (100 - $i) * $total-stoke-dasharray / 100;
+        }
+    }
+}
+
+//  Pictures
+
+.htmlPic {
+    background-image: url("./../media/html5.svg");
+}
+
+.css {
+    background-image: url("./../media/css3.svg");
+}
+
+.javascript {
+    background-image: url("./../media/javascript.svg");
+}
+
+.reactjs {
+    background-image: url("./../media/ReactJS.png");
+}
+
+.jquery {
+    background-image: url("./../media/jquery.png");
+}
+
+//  End of Pictures
