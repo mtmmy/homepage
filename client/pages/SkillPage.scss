@@ -1,5 +1,41 @@
-.areaRow {
-    height: 500px;
+.skillContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.areaRowOuter {
+    min-height: 500px;
+    width: 100%;
+    text-align: center;
+    background: url("./../media/backgroundPic.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.areaRowInner {    
+    padding-top: 50px;
+    padding-bottom: 100px;
+    display: inline-block;
+    width: 95%;
+
+    @media screen and (min-width: 768px) {
+        width: 90%;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 992px;
+    }
+}
+
+.skillRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cateName {
+    font-size: 64px;
 }
 
 .viewportContainer {

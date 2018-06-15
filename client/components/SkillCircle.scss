@@ -45,8 +45,8 @@ $circle: circle;
     
     .#{$circle + $i} {
         stroke-dashoffset: (100 - $i) * $total-stoke-dasharray / 100;
-        -webkit-animation: $show + $i 2s;
-        animation: $show + $i 2s;
+        -webkit-animation: $show + $i 3s;
+        animation: $show + $i 3s;
     }
 
     @-webkit-keyframes #{$show + $i} {
@@ -74,6 +74,7 @@ $circle: circle;
 
 .htmlPic {
     background-image: url("./../media/html5.svg");
+    top: 2px;
 }
 
 .css {
@@ -82,6 +83,7 @@ $circle: circle;
 
 .javascript {
     background-image: url("./../media/javascript.svg");
+    top: -2px;
 }
 
 .reactjs {
@@ -90,6 +92,29 @@ $circle: circle;
 
 .jquery {
     background-image: url("./../media/jquery.png");
+    top: -2px;
+}
+
+.java {
+    background-image: url("./../media/java.png");
+    background-size: 55%;
+    top: -2px;
+}
+
+.spring {
+    background-image: url("./../media/spring.png");
+    top: -4px;
+    background-size: 50%;
+}
+
+.git {
+    background-image: url("./../media/git.png");
+    top: -2px;
+}
+
+.svn {
+    top: -2px;
+    background-image: url("./../media/svn.png");
 }
 
 //  End of Pictures

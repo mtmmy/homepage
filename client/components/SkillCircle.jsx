@@ -8,7 +8,7 @@ export default class SkillCircle extends React.Component {
             return <div className={`skillPic ${picClassName}`} />
         } else if (text != "") {
             return <div className="skillName">{text}</div>
-        }        
+        }
     }
 
     render() {

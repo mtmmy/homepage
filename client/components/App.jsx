@@ -3,33 +3,61 @@ import { Route, Switch, Link } from 'react-router';
 import './App.scss'
 import NavbarComponent from './NavbarComponent.jsx';
 import HomePage from './../pages/HomePage.jsx';
-import BioPage from './../pages/BioPage.jsx';
 import ExpPage from './../pages/ExpPage.jsx';
 import SkillPage from './../pages/SkillPage.jsx';
 
 export default class App extends React.Component {
+
+  createItems(items) {
+    let container = [];
+    for (let i = 0; i < items.length - 1; i ++) {
+      let item = items[i];
+      if (i === 0) {
+        container.push(<Route key={i} path={item.url} exact component={item.component} />);
+      } else {
+        container.push(<Route key={i} path={item.url} component={item.component} />);
+      }
+    }
+    return container;
+  }
+
   render() {
     const conPref = "";
     var props = {
-      brand: {
-        url: conPref + "/",
-        text: "HANMIN YANG"
-      },
-      item1: {
-        text: "Contact"
-      },
-      item2: {
-        url: conPref + "/bio",
-        text: "Bio"
-      },
-      item3: {
-        url: conPref + "/experiences",
-        text: "Experience"
-      },
-      item4: {
-        url: conPref + "/skills",
-        text: "Skills"
-      }
+      items: [
+        {
+          url: "/",
+          text: "HANMIN YANG",
+          component: HomePage
+        },
+        {
+          url: "/experiences",
+          text: "Experience",
+          component: ExpPage
+        },
+        {
+          url: "/skills",
+          text: "Skills",
+          component: SkillPage
+        },
+        {
+          text: "Contact",
+          subItems: [
+            {
+              text: "LinkedIn",
+              url: ""
+            },
+            {
+              text: "Email",
+              url: ""
+            },
+            {
+              text: "Github",
+              url: ""
+            }
+          ]
+        }
+      ]
     }
     return (
       <div style={{textAlign: 'center'}}>
@@ -39,10 +67,7 @@ export default class App extends React.Component {
 
           <div className="contentPanel">
             <Switch>
-              <Route path={props.brand.url} exact component={HomePage} />
-              <Route path={props.item2.url} component={BioPage} />
-              <Route path={props.item3.url} component={ExpPage} />
-              <Route path={props.item4.url} component={SkillPage} />
+              {this.createItems(props.items)}
             </Switch>
           </div>
       </div>

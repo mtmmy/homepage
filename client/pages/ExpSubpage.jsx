@@ -6,19 +6,19 @@ import { Element } from 'react-scroll';
 class ExpSubpage extends React.Component {
     
     createInfoDivs() {
-        let { data, type, divClassName } = this.props;
+        let { data, type, divClassName, bgClassName } = this.props;
         let divs = [];
         data.forEach(function (val, i) {
             var element;
             if (type == "working") {
                 element = (
-                    <Element key={i} name={type + i} className="element">
+                    <Element key={i} name={type + i} className={`workingDiv ${bgClassName}`}>
                         <InfoDiv attributes={val} className={divClassName} type="workingExp" />
                     </Element>
                 );
             } else if (type == "education") {
                 element = (
-                    <Element key={i} name={type + i} className="element">
+                    <Element key={i} name={type + i} className={`educationDiv ${bgClassName}`}>
                         <InfoDiv attributes={val} className={divClassName} type="educationExp" />
                     </Element>
                 );

@@ -46,21 +46,17 @@
         [
             {
                 "name": "Java",
+                "picClassName": "java",
                 "percentage": 85,
                 "isActive": false,
-                "colorCode": "#e34f26"
+                "colorCode": "#3372b3"
             },
             {
                 "name": "Spring Framework",
+                "picClassName": "spring",
                 "percentage": 75,
                 "isActive": false,
-                "colorCode": "#e34f26"
-            },
-            {
-                "name": "Spring boost",
-                "percentage": 70,
-                "isActive": false,
-                "colorCode": "#e34f26"
+                "colorCode": "#7EB050"
             }
         ]
     },
@@ -70,15 +66,17 @@
         [
             {
                 "name": "Git",
+                "picClassName": "git",
                 "percentage": 90,
                 "isActive": false,
-                "colorCode": "#e34f26"
+                "colorCode": "#df5b40"
             },
             {
                 "name": "SVN",
+                "picClassName": "svn",
                 "percentage": 90,
                 "isActive": false,
-                "colorCode": "#e34f26"
+                "colorCode": "#859cc4"
             }
         ]
     }

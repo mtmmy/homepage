@@ -1,0 +1,41 @@
+.banner {
+    height: 800px;
+    background: url("./../media/backgroundPic.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.helloSection {
+    font-style: italic;
+}
+
+.nameSection {
+    font-weight: 700;
+    font-size: 64px;
+
+    @media screen and (min-width: 768px) {
+        font-size: 40px;
+        p::after {
+            display: inline-block;
+            margin: 0 0 12px 20px;
+            height: 3px;
+            content: " ";
+            text-shadow: none;
+            background-color: black;
+            width: 140px;
+        }
+
+        p::before {
+            display: inline-block;
+            margin: 0 20px 12px 0;
+            height: 3px;
+            content: " ";
+            text-shadow: none;
+            background-color: black;
+            width: 140px;
+        }
+    }
+}

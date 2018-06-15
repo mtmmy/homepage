@@ -1,10 +1,8 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
-import ScrollTrigger from 'react-scroll-trigger';
-import CircleWithName from '../components/CircleWithName.jsx';
+import Waypoint from 'react-waypoint';
 import SkillCircle from './../components/SkillCircle.jsx';
 import './SkillPage.scss'
-// import './example.scss'
 import data from './../data/skill.json';
 
 class SkillPage extends React.Component {
@@ -39,18 +37,18 @@ class SkillPage extends React.Component {
         for (let key in skillData) {
             let dataSource = skillData[key];
             let row = (
-                <Row key={i} className="areaRow">
-                    <Col xs={4} sm={3} md={2} lg={2}>
-                        {dataSource.nameTxt}
-                    </Col>
-                    <Col xs={8} sm={9} md={10} lg={10}>
-                        <ScrollTrigger 
-                            onEnter={ (e) => { this.onEnterViewport(e, key) }} 
-                        >
-                            <Row>{this.createSkills(dataSource.skills)}</Row>
-                        </ScrollTrigger>
-                    </Col>
-                </Row>
+                <div key={i} className="areaRowOuter">
+                    <Waypoint onEnter={ (e) => { this.onEnterViewport(e, key) }} bottomOffset="300px">
+                        <div className="areaRowInner">
+                            <Row>
+                                <Col xs={12} className="cateName">{dataSource.nameTxt}</Col>
+                            </Row>
+                            <Row className="skillRow">
+                                {this.createSkills(dataSource.skills)}
+                            </Row>
+                        </div>
+                    </Waypoint>
+                </div>
             );
             container.push(row);
             i++;
@@ -63,7 +61,7 @@ class SkillPage extends React.Component {
         let container = [];
         skills.forEach(function(val, i) {
             container.push(
-                <Col key={i} xs={6} sm={4} md={3} lg={2}>
+                <Col key={i} xs={4} sm={3} md={3} lg={2}>
                     <SkillCircle 
                         percentage={val.percentage} 
                         colorCode={val.colorCode}
@@ -77,10 +75,12 @@ class SkillPage extends React.Component {
     }
 
     render() {
-        return (                
-            <Grid>
-                {this.createAreaRows()}
-            </Grid>
+        return (
+            // <div>
+                <Grid className="skillContainer">
+                    {this.createAreaRows()}
+                </Grid>
+            // </div>
         );
     }
 }
