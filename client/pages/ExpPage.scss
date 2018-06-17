@@ -63,14 +63,22 @@
     }
 
     .workingDiv, .educationDiv {
-        height: 500px;
+        height: 600px;
         width: 100%;
-        text-align: center;
-        background: url("./../media/backgroundPic.jpg");
-        background-size: cover;
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    .expDivBg {
+        position: absolute;
+        height: 600px;
+        width: 100%;
+        text-align: center;
+        background: url("./../media/backgroundPic.jpg");
+        background-size: cover !important;
+        background-position: bottom 50px right 100px;
+        opacity: 0.4;
     }
 
     .expInfoDiv, .eduInfoDiv {
@@ -112,4 +120,43 @@
             }
         }
     }
+
+
+    // begining bg images
+    .acsBG {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ), url("./../media/bg_acs.jpg");
+    }
+
+    .gbBG {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ), url("./../media/bg_gb.jpg");
+    }
+
+    .ppBG {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ), url("./../media/bg_pp.jpg");
+    }
+
+    .taBG {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ), url("./../media/bg_ta.jpg");
+    }
+
+    .ujBG {
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ), url("./../media/bg_uj.jpg");
+    }
+
+    // end of bg images
 }

@@ -12,15 +12,21 @@ class ExpSubpage extends React.Component {
             var element;
             if (type == "working") {
                 element = (
-                    <Element key={i} name={type + i} className={`workingDiv ${bgClassName}`}>
-                        <InfoDiv attributes={val} className={divClassName} type="workingExp" />
-                    </Element>
+                    <div key={i}>
+                        <div className={`expDivBg ${val.bgClassName}`}></div>
+                        <Element name={type + i} className={`workingDiv`}>
+                            <InfoDiv attributes={val} className={divClassName} type="workingExp" />
+                        </Element>
+                    </div>
                 );
             } else if (type == "education") {
                 element = (
-                    <Element key={i} name={type + i} className={`educationDiv ${bgClassName}`}>
-                        <InfoDiv attributes={val} className={divClassName} type="educationExp" />
-                    </Element>
+                    <div key={i}>
+                        <div className={`expDivBg ${val.bgClassName}`}></div>
+                        <Element name={type + i} className={`educationDiv ${val.bgClassName}`}>
+                            <InfoDiv attributes={val} className={divClassName} type="educationExp" />
+                        </Element>
+                    </div>
                 );
             }
             divs.push(element);

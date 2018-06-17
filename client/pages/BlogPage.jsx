@@ -4,7 +4,7 @@ class BioPage extends React.Component {
     render() {
         return (
             <div>
-                Biopage
+                Blog page
             </div>
         );
     }

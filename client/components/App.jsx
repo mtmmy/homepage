@@ -5,6 +5,7 @@ import NavbarComponent from './NavbarComponent.jsx';
 import HomePage from './../pages/HomePage.jsx';
 import ExpPage from './../pages/ExpPage.jsx';
 import SkillPage from './../pages/SkillPage.jsx';
+import BlogPage from './../pages/BlogPage.jsx';
 
 export default class App extends React.Component {
 
@@ -41,19 +42,24 @@ export default class App extends React.Component {
           component: SkillPage
         },
         {
+          url: "/blog",
+          text: "Blog",
+          component: BlogPage
+        },
+        {
           text: "Contact",
           subItems: [
             {
               text: "LinkedIn",
-              url: ""
-            },
-            {
-              text: "Email",
-              url: ""
+              className: "fa fa-linkedin-square"
             },
             {
               text: "Github",
-              url: ""
+              className: "fa fa-github-square"
+            },
+            {
+              text: "Email",
+              className: "fa fa-envelope-square"
             }
           ]
         }

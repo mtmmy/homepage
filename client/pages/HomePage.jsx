@@ -1,13 +1,15 @@
 import React from 'react';
+import Footer from './../components/Footer.jsx';
 import './HomePage.scss'
 
 class HomePage extends React.Component {
     render() {
         var tempStyle = {
-            textAlign: "initial"
+            textAlign: "initial",
+            height: "1000px"
         }
         return (
-            <div style={tempStyle}>
+            <div>
                 <div className="banner">
                     <div>
                         <div className="helloSection">
@@ -20,7 +22,7 @@ class HomePage extends React.Component {
                 </div>
                 <div className="bio">
                 </div>
-                <div>
+                <div style={tempStyle}>
                     <ul>
                         <li>
                             Doing List
@@ -44,6 +46,7 @@ class HomePage extends React.Component {
                         </li>
                     </ul>
                 </div>
+                <Footer />
             </div>
         );
     }
