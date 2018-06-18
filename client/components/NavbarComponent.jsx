@@ -54,15 +54,16 @@ class NavbarComponent extends React.Component {
         )
     }
 
-    onContactSelect(e) {
+    onContactSelect(e) {        
+        let contactIndex = this.props.items.length - 1;        
         switch (e) {
-            case "3.1":
+            case contactIndex + ".1":
                 window.open("https://www.linkedin.com/in/yanghanmin/", "_blank");
                 break;
             case "facebook":
                 window.open("https://www.facebook.com/mtmmy", "_blank");
                 break;
-            case "3.2":
+            case contactIndex + ".2":
                 window.open("https://github.com/mtmmy", "_blank");
                 break;
             case "twitter":
