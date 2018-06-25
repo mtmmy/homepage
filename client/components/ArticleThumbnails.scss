@@ -1,0 +1,90 @@
+.thumbnail {
+    border: 1px solid #000000;
+    border-radius: 0;
+    margin: 1vh 3vw 1vh 3vw;
+}
+
+.thumbnailHide {
+    display: none;
+}
+
+.description {
+    margin-bottom: 2vh;
+    padding: 1vw 1vh;
+    text-align: left;
+}
+
+.bottomDiv {
+
+    @media screen and (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tagsDiv {
+        margin-left: 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1vh;
+
+        @media screen and (min-width: 768px) {
+            justify-content: flex-start;
+            margin-bottom: 0;
+        }
+        
+        div {
+            margin-right: 1vw;
+        }
+    }
+
+    .articleData {
+        margin-top: 1vh;
+
+        @media screen and (min-width: 768px) {
+            margin-top: 0;
+        }
+    }
+
+    .readBtn {
+        margin-right: 1vw;
+    }
+}
+
+.articleModal {
+    height: 95%;
+    margin-top: 50px;
+    padding: 10px 5vw 5vw 5vw;
+    overflow-y: auto;
+    background-color: white;
+    top: 50px;
+
+    code > span {
+        white-space: pre;
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 10px 50px 50px 50px;
+        overflow-y: auto;
+        background-color: white;
+        top: 50px;
+    }
+}
+
+.ReactModalPortal > * {
+    // When the modal is closed, overlay div has no css class
+    // This selector should be overridden by the `&--after-open` class below
+    opacity: 0;
+}
+
+.ReactModal__Overlay {
+    transition: opacity 500ms ease-in-out;
+    background: rgba(0, 0, 0, 0.15);
+    &--after-open {
+        opacity: 1;
+    }
+    &--before-close {
+        opacity: 0;
+    }
+}

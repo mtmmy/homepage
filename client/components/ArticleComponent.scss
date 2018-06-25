@@ -1,0 +1,32 @@
+.closeBtn {
+    border: 1px solid #000000;
+    background-color: #000000;
+    border-radius: 25px;
+    position: absolute;
+    cursor: pointer;
+    
+    width: 30px;
+    height: 30px;    
+    top: 80px;
+    right: 5vw;    
+
+    @media screen and (min-width: 768px) {
+        width: 50px;
+        height: 50px;    
+        top: 80px;
+    }
+}
+
+.closeBtn:before {
+    content: 'x'; // here is your X(cross) sign.
+    color: #ffffff;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 28px;
+    margin: -9px 0 0 7px;    
+
+    @media screen and (min-width: 768px) {
+        font-size: 36px;
+        margin: -5px 0 0 14px;
+    }
+}

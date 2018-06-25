@@ -1,115 +1,21 @@
-$menu-dropdown-height: 220px;
+@import './../utils/utils.scss';
 
 .blogPage {
-    height: 2000px;
 
-    @media screen and (min-width: 1280px) {
+    background-color: lightblue;
+    min-height: 100vh;
+
+    @include media-breakpoint-up(xl) {
         display: block;
         position: relative;
     }
 
     .articleCol {
-        background-color: aqua;
-        height: 1000px;
-        @media screen and (min-width: 1280px) {
-            position: absolute;
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+        @include media-breakpoint-up(xl) {
             width: 70%;
             left: 0;
         }
     }
-    
-    .menuColShow, .menuColHide {
-        background-color: burlywood;
-        position: -webkit-sticky;
-        position: sticky;
-        top: 50px;
-    
-        @media screen and (min-width: 1280px) {
-            // position: sticky;
-            float: right;
-            width: 30%;
-            right: 0px;
-            height: 500px;
-        }
-
-        .menuItemsShow {
-            div {
-                height: 50px;
-                // display: flex;
-                // justify-content: center;
-                // align-items: center;
-            }
-        }
-
-        .menuItemsHide {
-            display: none;
-        }
-    }
-
-    .menuColShow {
-        height: $menu-dropdown-height;
-        animation: showMenu 1s;
-        -webkit-animation: showMenu 1s;
-    }
-
-    .menuColHide {
-        height: 20px;
-        animation: hideMenu 1s;
-        -webkit-animation: hideMenu 1s;
-    }
-
-    .clickkBar {
-        position: absolute;
-        height: 20px;
-        width: 100%;
-        bottom: 0;
-
-        @media screen and (min-width: 1280px) {
-            display: none;
-        }
-    }
-
-    // animations
-
-    @-webkit-keyframes hideMenu {
-        from {
-            height: $menu-dropdown-height;
-        }
-
-        to {
-            height: 20px;
-        }
-    }
-
-    @keyframes hideMenu {
-        from {
-            height: $menu-dropdown-height;
-        }
-
-        to {
-            height: 20px;
-        }
-    }
-
-    @-webkit-keyframes showMenu {
-        from {
-            height: 20px;
-        }
-
-        to {
-            height: $menu-dropdown-height;
-        }
-    }
-
-    @keyframes showMenu {
-        from {
-            height: 20px;
-        }
-
-        to {
-            height: $menu-dropdown-height;
-        }
-    }
-
-    // end of animations
 }

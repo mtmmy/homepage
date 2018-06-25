@@ -1,0 +1,148 @@
+@import './../utils/utils.scss';
+
+$menu-fixed-height: 34 * 2 + 20 * 4;
+$menu-dropdown-height-xs: 175;
+$menu-dropdown-height-sm: 130;
+$menu-color: #888888;
+$header-color: #000000;
+
+.blogPage {
+    .menuColShow, .menuColHide {
+        background-color: $menu-color;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 50px;
+    
+        @include media-breakpoint-up(xl) {
+            // position: sticky;
+            float: right;
+            width: 30%;
+            right: 0px;
+            height: 500px;
+        }
+
+        .menuItemsShow {
+            padding-bottom: 20px;
+            > div {
+                .menuHaeder {
+                    background-color: $header-color;
+                    color: #ffffff;
+                }
+
+                .menuContent {
+                    padding: 5px;
+                    display: flex;
+                    justify-content: center;
+
+                    > select {
+                        @include media-breakpoint-up(sm) {
+                            width: 50%;
+                        }
+
+                        @include media-breakpoint-up(xl) {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .tags {
+
+                height: $menu-dropdown-height-xs + px;
+                @include media-breakpoint-up(sm) { height: $menu-dropdown-height-sm + px; }
+
+                .btn-toolbar {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                label {
+                    margin: 0 2px 2px 0;
+                    border-radius: 0;
+                }
+            }
+        }
+
+        .menuItemsHide {
+            display: none;
+        }
+    }
+
+    .menuColShow {
+        // height: $menu-dropdown-height;
+        animation: showMenu 1s;
+        -webkit-animation: showMenu 1s;
+
+        @include media-breakpoint-up(xl) {
+            animation: none;
+            -webkit-animation: none;
+        }
+    }
+
+    .menuColHide {
+        height: 20px;
+        animation: hideMenu 1s;
+        -webkit-animation: hideMenu 1s;
+    }
+
+    .clickkBar {
+        position: absolute;
+        height: 20px;
+        width: 100%;
+        bottom: 0;
+        color: #ffffff;
+        background-color: $header-color;
+        cursor: pointer;
+
+        @include media-breakpoint-up(xl) {
+            display: none;
+        }
+        
+    }
+
+    // animations
+
+    @include keyframes(hideMenu) {
+        from {
+            height: $menu-dropdown-height-xs + $menu-fixed-height + px;            
+        }
+
+        to {
+            height: 20px;
+        }
+    }
+
+    @include keyframes(showMenu) {
+        from {
+            height: 20px;
+        }
+
+        to {
+            height: $menu-dropdown-height-xs + $menu-fixed-height + px;
+        }        
+    }
+
+    @include media-breakpoint-up(sm) {
+        @include keyframes(hideMenu) {
+            from {
+                height: $menu-dropdown-height-sm + $menu-fixed-height + px;            
+            }
+    
+            to {
+                height: 20px;
+            }
+        }
+
+        @include keyframes(showMenu) {
+            from {
+                height: 20px;
+            }
+
+            to {
+                height: $menu-dropdown-height-sm + $menu-fixed-height + px; 
+            }
+        }        
+    }
+
+    // end of animations
+}
