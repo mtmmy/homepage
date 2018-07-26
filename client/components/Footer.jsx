@@ -1,10 +1,15 @@
 import React from 'react';
+import { Row } from 'react-bootstrap';
 import './Footer.scss';
 
 export default class Footer extends React.Component {
     constructor(props) {
         super(props);
         this.onIconClick = this.onIconClick.bind(this);
+    }
+
+    onDownloadClick() {
+        window.open("https://drive.google.com/file/d/1k0vyoXKHxmLNJeGsHnkkCZ4FRkFyzjVP/view?usp=sharing")        
     }
 
     onIconClick(site) {
@@ -28,6 +33,7 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div className="footer">
+                <div className="downloadResume" onClick={this.onDownloadClick}>Download My Resume</div>
                 <div className="iconContainer">
                     <div className="icons fa fa-linkedin-square" onClick={() => this.onIconClick("linkedin")} />
                     {/* <div className="icons fa fa-facebook-square" onClick={() => this.onIconClick("facebook")} /> */}

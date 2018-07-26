@@ -1,6 +1,6 @@
 {
-    "frontend": {
-        "nameTxt": "Frontend",
+    "webdev": {
+        "nameTxt": "Web Developement",
         "skills": 
         [
             {
@@ -37,13 +37,7 @@
                 "percentage": 70,
                 "isActive": false,
                 "colorCode": "#80D8F7"
-            }
-        ]
-    },
-    "backend": {
-        "nameTxt": "Backend",
-        "skills" : 
-        [
+            },
             {
                 "name": "Java",
                 "picClassName": "java",
@@ -57,6 +51,47 @@
                 "percentage": 75,
                 "isActive": false,
                 "colorCode": "#7EB050"
+            },
+            {
+                "name": "MySQL",
+                "picClassName": "mysql",
+                "percentage": 75,
+                "isActive": false,
+                "colorCode": "#FEA244"
+            }
+        ]
+    },
+    "programming": {
+        "nameTxt": "Programming Technologies",
+        "skills": 
+        [            
+            {
+                "name": "Python",
+                "picClassName": "python",
+                "percentage": 80,
+                "isActive": false,
+                "colorCode": "#FED155"
+            },
+            {
+                "name": "C#",
+                "picClassName": "csharp",
+                "percentage": 80,
+                "isActive": false,
+                "colorCode": "#812D94"
+            },
+            {
+                "name": "C++",
+                "picClassName": "cpp",
+                "percentage": 75,
+                "isActive": false,
+                "colorCode": "#0A80C8"
+            },
+            {
+                "name": "Xamarin",
+                "picClassName": "xamarin",
+                "percentage": 50,
+                "isActive": false,
+                "colorCode": "#3898D7"
             }
         ]
     },

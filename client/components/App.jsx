@@ -3,9 +3,9 @@ import { Route, Switch, Link } from 'react-router';
 import './App.scss'
 import NavbarComponent from './NavbarComponent.jsx';
 import HomePage from './../pages/HomePage.jsx';
-import ExpPage from './../pages/ExpPage.jsx';
 import SkillPage from './../pages/SkillPage.jsx';
-import BlogPage from './../pages/BlogPage.jsx';
+import WorkingPage from './../pages/WorkingPage.jsx';
+import EducationPage from './../pages/EducationPage.jsx';
 
 export default class App extends React.Component {
 
@@ -32,19 +32,19 @@ export default class App extends React.Component {
           component: HomePage
         },
         {
-          url: "/experiences",
-          text: "Experience",
-          component: ExpPage
+          url: "/working",
+          text: "Working Exp",
+          component: WorkingPage
+        },
+        {
+          url: "/edu",
+          text: "Education",
+          component: EducationPage
         },
         {
           url: "/skills",
           text: "Skills",
           component: SkillPage
-        },
-        {
-          url: "/blog",
-          text: "Blog",
-          component: BlogPage
         },
         {
           text: "Contact",

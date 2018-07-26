@@ -1,6 +1,5 @@
 import React from 'react';
 import InfoDiv from './../components/InfoDiv.jsx';
-import NavDots from './../components/NavDots.jsx';
 import { Element } from 'react-scroll';
 
 class ExpSubpage extends React.Component {
@@ -23,7 +22,7 @@ class ExpSubpage extends React.Component {
                 element = (
                     <div key={i}>
                         <div className={`expDivBg ${val.bgClassName}`}></div>
-                        <Element name={type + i} className={`educationDiv ${val.bgClassName}`}>
+                        <Element name={type + i} className={`educationDiv`}>
                             <InfoDiv attributes={val} className={divClassName} type="educationExp" />
                         </Element>
                     </div>
@@ -39,13 +38,6 @@ class ExpSubpage extends React.Component {
         const { data, type, navDotClassName } = this.props;
         return (
             <div>
-                {/* <NavDots
-                    amount={data.length}
-                    to={type}
-                    offset={-94}
-                    duration={500}
-                    className={navDotClassName}
-                />                     */}
                 {this.createInfoDivs()}
             </div>
         )
