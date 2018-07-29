@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Link } from 'react-router';
-import './App.scss'
+import './App.scss';
 import NavbarComponent from './NavbarComponent.jsx';
 import HomePage from './../pages/HomePage.jsx';
 import SkillPage from './../pages/SkillPage.jsx';

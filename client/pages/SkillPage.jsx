@@ -9,78 +9,139 @@ class SkillPage extends React.Component {
 
     constructor(props) {
         super(props);
-        this.onEnterViewport = this.onEnterViewport.bind(this);
 
         this.state = {
             skillData: data
         }
     }
 
-    componentWillMount() {
-        
+    lightenerVal(val, percentage) {
+        return Math.floor((255 - val) * percentage) + val;
     }
 
-    onEnterViewport(e, rowName) {
-        let newSkillData = this.state.skillData;
-        newSkillData[rowName] = data[rowName];
-        newSkillData[rowName].skills.forEach(function(val, i) {
-            val.isActive = true;
-        });
-        this.setState({ skillData: newSkillData });
+    darkenerVal(val, percentage) {
+        return Math.floor(val * percentage);
     }
 
-    createAreaRows() {
-        let container = [];
-        let skillData = this.state.skillData;
-
-        let i = 0;
-        for (let key in skillData) {
-            let dataSource = skillData[key];
-            let row = (
-                <div key={i} className="areaRowOuter">
-                    <Waypoint onEnter={ (e) => { this.onEnterViewport(e, key) }} bottomOffset="300px">
-                        <div className="areaRowInner">
-                            <Row>
-                                <Col xs={12} className="cateName">{dataSource.nameTxt}</Col>
-                            </Row>
-                            <Row className="skillRow">
-                                {this.createSkills(dataSource.skills)}
-                            </Row>
-                        </div>
-                    </Waypoint>
-                </div>
-            );
-            container.push(row);
-            i++;
+    intToBase16(num) {
+        let base16 = num.toString(16);
+        if (base16.length == 1) {
+            base16 = "0" + base16;
         }
+        return base16;
+    }
 
-        return container;
+    hexLightener(hex, percentage) {
+        if (percentage > 1) percentage = 1;
+        if (percentage < 0) percentage = 0;
+
+        var color = parseInt(hex.slice(1), 16);
+        var red = Math.floor(color / 65536);
+        var green = Math.floor(color / 256) % 256;
+        var blue = color % 256;
+
+        red = this.lightenerVal(red, percentage);
+        green = this.lightenerVal(green, percentage);
+        blue = this.lightenerVal(blue, percentage);       
+
+        let lightColor = "#" + this.intToBase16(red) + this.intToBase16(green) + this.intToBase16(blue);
+        return lightColor;
+    }
+
+    hexDarkener(hex, percentage) {
+        if (percentage > 1) percentage = 1;
+        if (percentage < 0) percentage = 0;
+        percentage = 1 - percentage;
+
+        var color = parseInt(hex.slice(1), 16);
+        var red = Math.floor(color / 65536);
+        var green = Math.floor(color / 256) % 256;
+        var blue = color % 256;
+
+        red = this.darkenerVal(red, percentage);
+        green = this.darkenerVal(green, percentage);
+        blue = this.darkenerVal(blue, percentage);
+
+        let darkColor = "#" + this.intToBase16(red) + this.intToBase16(green) + this.intToBase16(blue);
+        return darkColor;
     }
 
     createSkills(skills) {
         let container = [];
+        var self = this;        
         skills.forEach(function(val, i) {
+            let lightColor = self.hexLightener(val.colorCode, 0.4);
+            let darkColor = self.hexDarkener(val.colorCode, 0.2);
+            var style = {
+                background: "linear-gradient(to right, " + lightColor + ", " + darkColor + ")"
+            }
             container.push(
-                <Col key={i} xs={4} sm={3} md={3} lg={2}>
-                    <SkillCircle 
-                        percentage={val.percentage} 
-                        colorCode={val.colorCode}
-                        isActive={val.isActive}
-                        picClassName={val.picClassName}
-                        text={val.name}
-                    />
-                </Col>)
+                <li key={i} className={`chartBar ${"barlength_" + val.percentage}`} style={style}>
+                    <span className="chartLabel">
+                        {val.name}
+                    </span>
+                </li>
+            )
         })
+        return container;
+    }
+
+    createCategories() {
+        let container = []
+
+        let i = 0;
+        for (let key in data) {
+            let dataSource = data[key];
+            let cate = (
+                <div key={i} className={`chart ${dataSource.className}`}>
+                    <span className="chartTitle">{dataSource.nameTxt}</span>
+                    <ul className="chartHorizontal">
+                        {this.createSkills(dataSource.skills)}
+                    </ul>
+                </div>
+            );
+            container.push(cate);
+            i++;
+        }
         return container;
     }
 
     render() {
         return (
-            // <div>
-                <Grid className="skillContainer">
-                    {this.createAreaRows()}
-                </Grid>
-            // </div>
+            <div className="skills">
+                <ul className="lines">
+                    <li className="line line0">
+                        <span className="lineLabel title">
+                            Skill level
+                        </span>
+                    </li>
+                    <li className="line line25">
+                        <span className="lineLabel">
+                            Beginner
+                        </span>
+                    </li>
+                    <li className="line line50">
+                        <span className="lineLabel">
+                            Skilled
+                        </span>
+                    </li>
+                    <li className="line line75">
+                        <span className="lineLabel">
+                            Seasoned
+                        </span>
+                    </li>
+                    <li className="line line100">
+                        <span className="lineLabel last">
+                            Advanced
+                        </span>
+                    </li>
+                </ul>
+
+                <div className="charts">
+                    {this.createCategories()}
+                </div>
+            </div>
+
         );
     }
 }

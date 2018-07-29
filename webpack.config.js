@@ -1,6 +1,8 @@
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   template: './client/index.html',
   filename: 'index.html',
@@ -47,5 +49,13 @@ module.exports = {
   // devServer: {
   //   historyApiFallback: true,
   // },
-  plugins: [HtmlWebpackPluginConfig]
+  plugins: [
+    HtmlWebpackPluginConfig,
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "./css/[name].css",
+      chunkFilename: "./css/[id].css"
+    })
+  ]
 }

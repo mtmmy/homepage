@@ -1,6 +1,7 @@
 {
     "webdev": {
         "nameTxt": "Web Developement",
+        "className": "chartWeb",
         "skills": 
         [
             {
@@ -11,16 +12,16 @@
                 "colorCode": "#EEE45F"
             },
             {
-                "name": "HTML",
+                "name": "HTML5",
                 "picClassName": "htmlPic",
-                "percentage": 90,
+                "percentage": 95,
                 "isActive": false,
                 "colorCode": "#e34f26"
             },
             {
-                "name": "CSS",
+                "name": "CSS & SCSS",
                 "picClassName": "css",
-                "percentage": 90,
+                "percentage": 85,
                 "isActive": false,
                 "colorCode": "#3784C8"
             },
@@ -34,7 +35,7 @@
             {
                 "name": "ReactJs",
                 "picClassName": "reactjs",
-                "percentage": 70,
+                "percentage": 65,
                 "isActive": false,
                 "colorCode": "#80D8F7"
             },
@@ -48,14 +49,14 @@
             {
                 "name": "Spring Framework",
                 "picClassName": "spring",
-                "percentage": 75,
+                "percentage": 70,
                 "isActive": false,
                 "colorCode": "#7EB050"
             },
             {
                 "name": "MySQL",
                 "picClassName": "mysql",
-                "percentage": 75,
+                "percentage": 70,
                 "isActive": false,
                 "colorCode": "#FEA244"
             }
@@ -63,46 +64,62 @@
     },
     "programming": {
         "nameTxt": "Programming Technologies",
+        "className": "chartProg",
         "skills": 
         [            
             {
                 "name": "Python",
                 "picClassName": "python",
-                "percentage": 80,
+                "percentage": 60,
                 "isActive": false,
                 "colorCode": "#FED155"
             },
             {
                 "name": "C#",
                 "picClassName": "csharp",
-                "percentage": 80,
+                "percentage": 70,
                 "isActive": false,
                 "colorCode": "#812D94"
             },
             {
                 "name": "C++",
                 "picClassName": "cpp",
-                "percentage": 75,
+                "percentage": 70,
                 "isActive": false,
                 "colorCode": "#0A80C8"
             },
             {
                 "name": "Xamarin",
                 "picClassName": "xamarin",
-                "percentage": 50,
+                "percentage": 30,
                 "isActive": false,
                 "colorCode": "#3898D7"
+            },
+            {
+                "name": "Android",
+                "picClassName": "android",
+                "percentage": 30,
+                "isActive": false,
+                "colorCode": "#85B85A"
+            },
+            {
+                "name": "Object-oriented Programming",
+                "picClassName": "",
+                "percentage": 95,
+                "isActive": false,
+                "colorCode": "#222222"
             }
         ]
     },
-    "versionControl": {
-        "nameTxt": "Version Control",
+    "productivity": {
+        "nameTxt": "Productivity",
+        "className": "chartProd",
         "skills": 
         [
             {
                 "name": "Git",
                 "picClassName": "git",
-                "percentage": 90,
+                "percentage": 85,
                 "isActive": false,
                 "colorCode": "#df5b40"
             },
