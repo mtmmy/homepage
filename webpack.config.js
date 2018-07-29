@@ -9,12 +9,18 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 })
 
+const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({
+  // Options similar to the same options in webpackOptions.output
+  // both options are optional
+  filename: "[name].css",
+  chunkFilename: "[id].css"
+})
+
 module.exports = {
   entry: './client/index.js',
   output: {
     path: path.resolve('build'),
-    filename: 'index_bundle.js',
-    // publicPath: '/homepage/'
+    filename: 'index_bundle.js'
   },
   mode: 'development',
   module: {
@@ -51,11 +57,6 @@ module.exports = {
   // },
   plugins: [
     HtmlWebpackPluginConfig,
-    new MiniCssExtractPlugin({
-      // Options similar to the same options in webpackOptions.output
-      // both options are optional
-      filename: "./css/[name].css",
-      chunkFilename: "./css/[id].css"
-    })
+    MiniCssExtractPluginConfig
   ]
 }

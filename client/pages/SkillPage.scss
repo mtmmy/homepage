@@ -64,7 +64,8 @@
 
     @media screen and (max-width: 767px) {        
         &.title {
-            width: 101px;
+            white-space: nowrap;
+            width: 100px;
         }
 
         &.last {
@@ -127,7 +128,8 @@
   
   .chartHorizontal {
     list-style-type: none;
-        overflow: hidden;
+    overflow: hidden;
+    padding: 0;
         li {
             text-align: right;
             padding-right: 20px;
