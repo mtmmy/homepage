@@ -13,7 +13,7 @@
         "school": "Chang Gung University",
         "dateEnd": "Jun 2013",
         "location": "Taoyuan, Taiwan",
-        "major": "Master of Sience in Computer Science And Information Engineering",
+        "major": "Master of Science in Computer Science And Information Engineering",
         "details": [
             "I concentrated on the 4G wireless network, especially 802.16m – also known as WiMAX – under the supervision of Prof. Jenhui Chen. I published a paper on my findings in the journal ​Simulation Modelling Practice and Theory​. Through this project, I mainly focused on the IEEE 802.16m simulator as implemented by NS-3. This simulator provides a validation tool for researchers to verify simulated results related to WiMAX while supporting basic MAC functions, including initial raging function, four types of bandwidth request procedure, five types of standard-specific QoS, an QoS-based transmission scheduler, an adaptive modulation and coding (AMC) selection function, and a PHY layer with a channel propagation model."
         ],
