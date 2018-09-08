@@ -6,9 +6,8 @@
         "location": "Taipei, Taiwan",
         "title": "Frontend Web Engineer",
         "details": [
-            "Developed and designed frontend system by using ReactJs, SCSS for real-time gambling system.",
-            "Developed web slot games by using ReactJs, NodeJs.",
-            "Manipulated data-flow from backend system by Redux."
+            "Designed and developed reusable components which can be utilized on different web-based slot games",
+            "Managed states in ReactJs by using Redux to simplify programming logic"
         ],
         "bgClassName": "acsBG"
     },

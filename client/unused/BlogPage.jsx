@@ -2,7 +2,7 @@ import React from 'react';
 import './BlogPage.scss';
 import ArticleThumbnails from './../components/ArticleThumbnails.jsx';
 import BlogMenu from './../components/BlogMenu.jsx';
-import SOURCE_CODE from './../sourcecode/sourcecode.js';
+import SOURCE_CODE from '../sourcecode/sourcecode';
 import { format as dateFormat} from 'date-fns';
 
 // import SyntaxHighlighter from 'react-syntax-highlighter';

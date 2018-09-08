@@ -1,4 +1,5 @@
 import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 
 class InfoDiv extends React.Component {
 
@@ -17,27 +18,27 @@ class InfoDiv extends React.Component {
             let { companyName, dateStart, dateEnd, location, title, details } = attributes;
             return (
                 <div className={className}>
-                    <div className="companyName">{companyName}</div>
-                    <div className="title">{title}</div>
-                    <div className="date">{dateStart} - {dateEnd}</div>
-                    <div className="location">{location}</div>                    
+                    <div className="companyName">{companyName}, {title}</div>
+                    <div className="date">{dateStart} - {dateEnd}, {location}</div>
                     <div className="detail">
                         {this.createDetails(details)}
                     </div>
                 </div>
             )
         } else if (type == "educationExp") {
-            let { school, dateEnd, location, major, details } = attributes;
+            let { school, dateEnd, location, major, details, gpa, icon } = attributes;
             return (
-                <div className={className}>
-                    <div className="school">{school}</div>
-                    <div className="major">{major}</div>
-                    <div className="date">{dateEnd}</div>
-                    <div className="location">{location}</div>                    
-                    <div className="detail">
-                        {this.createDetails(details)}
-                    </div>
-                </div>
+                <Row className={className}>
+                    <Col xs={0} sm={2} className={`icon_${icon}`}></Col>
+                    <Col xs={12} sm={10}>
+                        <div className="major">{major}</div>
+                        <div className="school">{school}, GPA {gpa} / 4.0</div>                        
+                        <div className="date">{dateEnd}, {location}</div>
+                        {/* <div className="detail">
+                            {this.createDetails(details)}
+                        </div> */}
+                    </Col>
+                </Row>
             )
         }
         return (

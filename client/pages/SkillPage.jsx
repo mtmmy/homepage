@@ -1,11 +1,8 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
-import Waypoint from 'react-waypoint';
-import SkillCircle from './../components/SkillCircle.jsx';
 import './SkillPage.scss'
 import data from './../data/skill.json';
 
-class SkillPage extends React.Component {
+export default class SkillPage extends React.Component {
 
     constructor(props) {
         super(props);
@@ -137,7 +134,7 @@ class SkillPage extends React.Component {
                     </li>
                 </ul>
 
-                <div className="charts">
+                <div className={this.props.runAnimate ? "charts" : "chartsHide"}>
                     {this.createCategories()}
                 </div>
             </div>
@@ -145,5 +142,3 @@ class SkillPage extends React.Component {
         );
     }
 }
-
-export default SkillPage;

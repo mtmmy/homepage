@@ -1,8 +1,6 @@
 import React from 'react';
 import { Nav, Navbar, NavItem,
     NavDropdown, MenuItem } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { LinkContainer } from 'react-router-bootstrap';
 import './NavbarComponent.scss';
 
 class NavbarComponent extends React.Component {
@@ -18,11 +16,9 @@ class NavbarComponent extends React.Component {
         for (let i = 1; i < items.length - 1; i++) {
             let item = items[i];
             container.push(
-                <LinkContainer key={i} to={item.url}>
-                    <NavItem eventKey={i}>
-                        {item.text}
-                    </NavItem>
-                </LinkContainer>
+                <NavItem eventKey={i}>
+                    {item.text}
+                </NavItem>
             );
         }
 
@@ -82,7 +78,7 @@ class NavbarComponent extends React.Component {
             <Navbar collapseOnSelect className="navbar">
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <Link to={items[0].url}>{items[0].text}</Link>
+                        <div>{items[0].text}</div>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>

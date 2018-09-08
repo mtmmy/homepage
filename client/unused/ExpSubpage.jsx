@@ -1,5 +1,5 @@
 import React from 'react';
-import InfoDiv from './../components/InfoDiv.jsx';
+import InfoDiv from '../components/InfoDiv';
 import { Element } from 'react-scroll';
 
 class ExpSubpage extends React.Component {
