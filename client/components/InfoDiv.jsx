@@ -32,7 +32,7 @@ class InfoDiv extends React.Component {
                     <Col xs={0} sm={2} className={`icon_${icon}`}></Col>
                     <Col xs={12} sm={10}>
                         <div className="major">{major}</div>
-                        <div className="school">{school}, GPA {gpa} / 4.0</div>                        
+                        <div className="school">{school}, {gpa} GPA </div>                        
                         <div className="date">{dateEnd}, {location}</div>
                         {/* <div className="detail">
                             {this.createDetails(details)}

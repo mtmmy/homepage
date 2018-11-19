@@ -11,7 +11,7 @@
     margin: auto;
     top: 5vh;
     position: relative;
-    height: 830px;
+    height: 910px;
     width: 90%;
     max-width: 992px;
     font-size: 18px;
@@ -106,7 +106,7 @@
 }
   
 .chart {
-    margin: 30px 0 0;
+    margin: 20px 0 0;
 
     &:first-child {
         margin: 0;
@@ -122,11 +122,11 @@
     opacity: 0;
 
     animation: 1s anim-lightspeed-in ease forwards;
-    .chartProg & {
-        animation-delay: 2.7s;
+    .chartCon & {
+        animation-delay: 3.7s;
     }
     .chartProd & {
-        animation-delay: 4.7s;
+        animation-delay: 5.2s;
     }
 }
   
@@ -153,14 +153,14 @@
 
     animation: 1s anim-lightspeed-in ease forwards;
 
-    .chartWeb & {
-        @include stagger-anim-delay(8, 0.5s, 0.2s);
-    }
     .chartProg & {
-        @include stagger-anim-delay(6, 3.2s, 0.2s);
+        @include stagger-anim-delay(13, 0.5s, 0.2s);
+    }
+    .chartCon & {
+        @include stagger-anim-delay(3, 4.2s, 0.2s);
     }
     .chartProd & {
-        @include stagger-anim-delay(2, 5.2s, 0.2s);
+        @include stagger-anim-delay(2, 5.8s, 0.2s);
     }
 }
   

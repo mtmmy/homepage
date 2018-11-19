@@ -9,7 +9,7 @@ export default class Footer extends React.Component {
     }
 
     onDownloadClick() {
-        window.open("https://drive.google.com/file/d/1zlnWMX-XLYR7sqEqPA7oPLrlMhoJv7e4/view?usp=sharing")        
+        window.open("https://drive.google.com/file/d/1p9iCSYJXsK6BaD-BFr2duxzrsoYAAyzL/view?usp=sharing")        
     }
 
     onIconClick(site) {

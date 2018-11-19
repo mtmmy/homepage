@@ -1,44 +1,9 @@
 {
-    "webdev": {
-        "nameTxt": "Web Developement",
-        "className": "chartWeb",
+    "programming": {
+        "nameTxt": "Programming Technologies",
+        "className": "chartProg",
         "skills": 
         [
-            {
-                "name": "Javascript",
-                "picClassName": "javascript",
-                "percentage": 90,
-                "isActive": false,
-                "colorCode": "#EEE45F"
-            },
-            {
-                "name": "HTML5",
-                "picClassName": "htmlPic",
-                "percentage": 95,
-                "isActive": false,
-                "colorCode": "#e34f26"
-            },
-            {
-                "name": "CSS & SCSS",
-                "picClassName": "css",
-                "percentage": 85,
-                "isActive": false,
-                "colorCode": "#3784C8"
-            },
-            {
-                "name": "jQuery",
-                "picClassName": "jquery",
-                "percentage": 90,
-                "isActive": false,
-                "colorCode": "#1F3551"
-            },
-            {
-                "name": "ReactJs",
-                "picClassName": "reactjs",
-                "percentage": 65,
-                "isActive": false,
-                "colorCode": "#80D8F7"
-            },
             {
                 "name": "Java",
                 "picClassName": "java",
@@ -47,30 +12,23 @@
                 "colorCode": "#3372b3"
             },
             {
-                "name": "Spring Framework",
-                "picClassName": "spring",
-                "percentage": 70,
+                "name": "Javascript",
+                "picClassName": "javascript",
+                "percentage": 85,
                 "isActive": false,
-                "colorCode": "#7EB050"
+                "colorCode": "#EEE45F"
             },
             {
-                "name": "MySQL",
-                "picClassName": "mysql",
-                "percentage": 70,
+                "name": "jQuery",
+                "picClassName": "jquery",
+                "percentage": 85,
                 "isActive": false,
-                "colorCode": "#FEA244"
-            }
-        ]
-    },
-    "programming": {
-        "nameTxt": "Programming Technologies",
-        "className": "chartProg",
-        "skills": 
-        [            
+                "colorCode": "#1F3551"
+            },
             {
                 "name": "Python",
                 "picClassName": "python",
-                "percentage": 60,
+                "percentage": 75,
                 "isActive": false,
                 "colorCode": "#FED155"
             },
@@ -82,11 +40,46 @@
                 "colorCode": "#812D94"
             },
             {
-                "name": "C++",
-                "picClassName": "cpp",
+                "name": "HTML5",
+                "picClassName": "htmlPic",
                 "percentage": 70,
                 "isActive": false,
+                "colorCode": "#e34f26"
+            },
+            {
+                "name": "CSS & SCSS",
+                "picClassName": "css",
+                "percentage": 70,
+                "isActive": false,
+                "colorCode": "#3784C8"
+            },
+            {
+                "name": "Spring Framework",
+                "picClassName": "spring",
+                "percentage": 70,
+                "isActive": false,
+                "colorCode": "#7EB050"
+            },
+            {
+                "name": "ReactJs",
+                "picClassName": "reactjs",
+                "percentage": 65,
+                "isActive": false,
+                "colorCode": "#80D8F7"
+            },
+            {
+                "name": "C++",
+                "picClassName": "cpp",
+                "percentage": 65,
+                "isActive": false,
                 "colorCode": "#0A80C8"
+            },
+            {
+                "name": "MySQL",
+                "picClassName": "mysql",
+                "percentage": 65,
+                "isActive": false,
+                "colorCode": "#FEA244"
             },
             {
                 "name": "Xamarin",
@@ -101,11 +94,31 @@
                 "percentage": 30,
                 "isActive": false,
                 "colorCode": "#85B85A"
-            },
+            }
+        ]
+    },
+    "concepts": {
+        "nameTxt": "Concepts",
+        "className": "chartCon",
+        "skills": [
             {
                 "name": "Object-oriented Programming",
                 "picClassName": "",
                 "percentage": 95,
+                "isActive": false,
+                "colorCode": "#222222"
+            },
+            {
+                "name": "Data Structure",
+                "picClassName": "",
+                "percentage": 90,
+                "isActive": false,
+                "colorCode": "#222222"
+            },
+            {
+                "name": "Algorithm",
+                "picClassName": "",
+                "percentage": 85,
                 "isActive": false,
                 "colorCode": "#222222"
             }
@@ -116,19 +129,20 @@
         "className": "chartProd",
         "skills": 
         [
-            {
-                "name": "Git",
-                "picClassName": "git",
-                "percentage": 85,
-                "isActive": false,
-                "colorCode": "#df5b40"
-            },
+
             {
                 "name": "SVN",
                 "picClassName": "svn",
                 "percentage": 90,
                 "isActive": false,
                 "colorCode": "#859cc4"
+            },
+            {
+                "name": "Git",
+                "picClassName": "git",
+                "percentage": 85,
+                "isActive": false,
+                "colorCode": "#df5b40"
             }
         ]
     }

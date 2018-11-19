@@ -4,14 +4,6 @@ import data from './../data/skill.json';
 
 export default class SkillPage extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            skillData: data
-        }
-    }
-
     lightenerVal(val, percentage) {
         return Math.floor((255 - val) * percentage) + val;
     }
